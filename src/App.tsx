@@ -1,13 +1,13 @@
 import "./styles.css";
 import { UserCard } from "./components/UserCard";
-import {useAllUsers} from "./hooks/useAllUsers";
-import axios from "axios";
-import { User } from "./types/api/user";
-import { useState } from "react";
-import { UserProfile } from "./types/userProfile";
+import { useAllUsers } from "./hooks/useAllUsers";
 
 export default function App() {
-  const onClickFetchUser = () => {};
+  const { getUsers, userProfiles, loading, error } = useAllUsers();
+
+  const onClickFetchUser = () => {
+    getUsers();
+  };
 
   return (
     <div className="App">
